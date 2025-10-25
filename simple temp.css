@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap");
 
 :root {
-  /* for vscode testing only, remove all except serif and sans-serif when actually using */
   --serif: "Cormorant", serif;
   --sans-serif: "Montserrat", sans-serif;
   --accent1: 200, 100, 120;
@@ -9,7 +8,7 @@
   --accent3: 240, 180, 120;
 }
 
-/* --- GENERAL --- */
+/* GENERAL */
 
 .content-wrapper {
   display: flex;
@@ -56,7 +55,7 @@
   margin: 0;
 }
 
-/* --- UNIVERSAL BUTTON ACCENT COLORS --- */
+/* UNIVERSAL BUTTON ACCENT COLORS */
 
 .btn.accent1 {
   --btn-accent: var(--accent1);
@@ -73,7 +72,7 @@
   --btn-accent: gradient;
 }
 
-/* --- TRIGGER WARNING BUTTON --- */
+/* TRIGGER WARNING BUTTON */
 
 .trigger-warning-wrapper {
   position: absolute;
@@ -104,8 +103,8 @@
   border-radius: 8px;
   padding: 4px 14px;
   color: rgba(0, 0, 0, 0.85);
-  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
-    background 0.22s ease, filter 0.22s ease;
+  background: rgba(var(--btn-accent, var(--accent2)), 0.3);
+  transition: filter 0.22s ease, background 0.22s ease;
   cursor: pointer;
   overflow: visible;
   font-family: inherit;
@@ -113,7 +112,7 @@
   font-weight: inherit;
 }
 
-/* Popup Box */
+/* popup */
 .trigger-warning-wrapper .btn::after {
   content: attr(data-tw);
   position: absolute;
@@ -135,18 +134,12 @@
   z-index: 15;
 }
 
-body[color-mode="dark"] .trigger-warning-wrapper .btn {
-  color: rgba(255, 255, 255, 0.85);
+.trigger-warning-wrapper .btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
-body[color-mode="dark"] .trigger-warning-wrapper .btn::after {
-  background: #222;
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(var(--btn-accent, var(--accent2)), 0.5);
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-/* --- PARTNER TAG --- */
+/* PARTNER TAG */
 
 .partner-tag-wrapper {
   position: absolute;
@@ -173,13 +166,15 @@ body[color-mode="dark"] .trigger-warning-wrapper .btn::after {
   z-index: 1;
   display: inline-block;
   margin: 0;
-  border: none;
+  border: 1px solid rgba(var(--btn-accent, var(--accent3)), 0.5);
   border-radius: 8px;
-  border: 1px solid rgba(var(--btn-accent, var(--accent2)), 0.5);
   padding: 4px 14px;
   color: rgba(0, 0, 0, 0.85);
-  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
-    background 0.22s ease, filter 0.22s ease;
+  background: rgba(
+    var(--btn-accent, var(--accent3)),
+    0.3
+  ); /* partner tag uses accent3 */
+  transition: filter 0.22s ease, background 0.22s ease;
   cursor: pointer;
   overflow: visible;
   font-family: inherit;
@@ -189,7 +184,7 @@ body[color-mode="dark"] .trigger-warning-wrapper .btn::after {
 
 .partner-tag-wrapper .btn.float {
   transform: translateY(-8px);
-  background: rgba(var(--btn-accent, var(--accent2)), 0.35);
+  background: rgba(var(--btn-accent, var(--accent3)), 0.35);
   filter: brightness(1.1);
 }
 
@@ -201,25 +196,26 @@ body[color-mode="dark"] .trigger-warning-wrapper .btn::after {
   transform: translateY(-3px);
 }
 
+body[color-mode="dark"] .trigger-warning-wrapper .btn,
 body[color-mode="dark"] .partner-tag-wrapper .btn {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* --- TRIGGER WARNING & PARTNER TAG BUTTON --- */
-.trigger-warning-wrapper .btn,
-.partner-tag-wrapper .btn {
-  background: rgba(var(--btn-accent, var(--accent3)), 0.3);
-  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
-    background 0.22s ease, filter 0.22s ease;
+body[color-mode="dark"] .trigger-warning-wrapper .btn::after {
+  background: #222;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(var(--btn-accent, var(--accent2)), 0.5);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
+
+/* JOINT HOVER */
 
 .trigger-warning-wrapper .btn:hover,
 .partner-tag-wrapper .btn:hover {
-  background: rgba(var(--btn-accent, var(--accent3)), 0.3);
-  filter: brightness(1.5);
+  filter: brightness(1.2); /* only brighten, no lift */
 }
 
-/* --- FONT --- */
+/* FONT */
 
 .sans-serif {
   font-family: "Montserrat", sans-serif;
@@ -233,7 +229,7 @@ body[color-mode="dark"] .partner-tag-wrapper .btn {
   font-size: 15px;
 }
 
-/* --- HIGHLIGHT --- */
+/* HIGHLIGHT */
 
 .hl {
   border-radius: 8px;

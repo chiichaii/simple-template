@@ -10,7 +10,6 @@
   --sans-serif: "Montserrat", sans-serif;
 }
 
-/* base bg + text colors */
 body {
   background: #ffffff;
   color: var(--text);
@@ -19,11 +18,12 @@ body {
   line-height: 20px;
 }
 
-/* Dark mode background */
 html[color-mode="dark"] body {
   background: #111;
   color: var(--text);
 }
+
+/* BUTTON */
 
 .btn {
   font-family: var(--sans-serif);
@@ -143,6 +143,8 @@ html[color-mode="dark"] body {
   }
 }
 
+/* FLOAT */
+
 .float {
   animation: gentle-float 4s ease-in-out infinite;
 }
@@ -173,7 +175,7 @@ html[color-mode="dark"] body {
   filter: brightness(1.15);
 }
 
-/* light and dark mode */
+/* LIGHT AND DARK MODE */
 
 html[color-mode="dark"] {
   --text: #fff;
