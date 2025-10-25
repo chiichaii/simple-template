@@ -121,7 +121,7 @@
   transform: translateX(-50%) scale(0.95);
   background: var(--bg-color, #fff);
   color: rgba(0, 0, 0, 0.85);
-  font-size: 11px;
+  font-size: 14px;
   font-style: italic;
   padding: 6px 10px;
   border-radius: 8px;
