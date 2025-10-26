@@ -1,0 +1,139 @@
+:root {
+  --bor: rgba(0, 0, 0, 0.2);
+}
+
+html[color-mode="dark"] {
+  --bor: rgba(255, 255, 255, 0.2);
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* FOUR IMAGES */
+.image-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(2, 250px);
+  grid-template-rows: repeat(2, 250px);
+  width: 600px;
+  height: 600px;
+  border: 1px solid var(--bor);
+  border-radius: 60px;
+  background: transparent;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.image-grid img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: none;
+  transition: filter 0.3s ease;
+}
+
+.image-grid img:hover {
+  filter: brightness(1.15);
+}
+
+.image-grid .img-1 {
+  border-top-left-radius: 60px;
+}
+.image-grid .img-2 {
+  border-top-right-radius: 60px;
+}
+.image-grid .img-3 {
+  border-bottom-left-radius: 60px;
+}
+.image-grid .img-4 {
+  border-bottom-right-radius: 60px;
+}
+
+/* TWO IMAGES */
+.image-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  grid-template-rows: 500px;
+  width: 600px;
+  height: 600px;
+  padding: 50px;
+  border: 1px solid var(--bor);
+  border-radius: 60px;
+  background: transparent;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.image-grid-two img {
+  width: 250px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: none;
+  transition: filter 0.3s ease;
+}
+
+.image-grid-two img:hover {
+  filter: brightness(1.15);
+}
+
+.image-grid-two .img-1 {
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+
+.image-grid-two .img-2 {
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+/* ONE IMAGE */
+.image-grid-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 50px;
+  border: 1px solid var(--bor);
+  border-radius: 60px;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.image-grid-one img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 40px;
+  transition: filter 0.3s ease;
+}
+
+.image-grid-one img:hover {
+  filter: brightness(1.15);
+}
